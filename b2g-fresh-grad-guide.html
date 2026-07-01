@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2G 新鮮人求職指南 — 免費領取</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0f1c2e;
+  --navy-mid: #1a2f47;
+  --teal: #1d9e75;
+  --teal-light: #e1f5ee;
+  --amber: #ba7517;
+  --amber-light: #faeeda;
+  --off-white: #f8f6f1;
+  --text: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-muted: #888;
+  --border: rgba(0,0,0,0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.8;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 5vw;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+.logo span { color: var(--teal); }
+nav a.nav-link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+nav a.nav-link:hover { color: var(--teal); border-color: var(--teal); }
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 72px;
+}
+.hero-left {
+  background: var(--navy);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 7vw 5vw 7vw 8vw;
+}
+.hero-tag {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 2rem;
+}
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.01em;
+}
+.hero-title em { font-style: normal; color: var(--teal); }
+.hero-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.9;
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+}
+.hero-cta {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+  border: none;
+}
+.hero-cta:hover { background: #0f6e56; transform: translateY(-1px); }
+
+.hero-right {
+  background: var(--off-white);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 7vw 8vw 7vw 5vw;
+}
+.hero-stat-label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+.stat-list { display: flex; flex-direction: column; gap: 2rem; }
+.stat-item { display: flex; align-items: flex-start; gap: 1.2rem; }
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem;
+  color: var(--navy);
+  line-height: 1;
+  min-width: 3rem;
+}
+.stat-num span { font-size: 1rem; color: var(--teal); }
+.stat-text {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  padding-top: 0.3rem;
+}
+.stat-text strong { font-weight: 500; color: var(--text); display: block; }
+
+.section-divider { height: 1px; background: var(--border); margin: 0 8vw; }
+
+.section { padding: 7rem 8vw; }
+.section-header {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+.section-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 4rem;
+  color: var(--teal-light);
+  line-height: 1;
+  user-select: none;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+.content-card {
+  background: var(--off-white);
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
+}
+.content-card:hover { background: var(--teal-light); }
+.card-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  display: block;
+  opacity: 0.5;
+}
+.card-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+.card-desc {
+  font-size: 0.83rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+.for-who { background: var(--navy); padding: 7rem 8vw; }
+.for-who .section-num { color: rgba(255,255,255,0.06); }
+.for-who .section-title { color: #fff; }
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 4rem;
+}
+.who-card { border: 0.5px solid rgba(255,255,255,0.12); padding: 2.5rem 2rem; }
+.who-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  display: block;
+}
+.who-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+.who-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.85; }
+
+.checklist-section { padding: 7rem 8vw; background: #fff; }
+.checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+  align-items: start;
+  margin-top: 4rem;
+}
+.check-list { list-style: none; }
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.check-list li:first-child { border-top: 0.5px solid var(--border); }
+.dot {
+  width: 18px; height: 18px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+  display: flex; align-items: center; justify-content: center;
+}
+.dot::after {
+  content: '';
+  width: 6px; height: 4px;
+  border-left: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+  display: block;
+}
+.aside-box { background: var(--off-white); padding: 3rem 2.5rem; }
+.aside-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+.aside-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+.aside-desc { font-size: 0.85rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 2rem; }
+.aside-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--border);
+  font-style: italic;
+}
+
+.services-section { background: var(--off-white); padding: 7rem 8vw; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 4rem;
+}
+.service-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.service-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  display: block;
+}
+.service-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+.service-price {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+}
+.service-price span { font-family: 'Noto Sans TC', sans-serif; font-size: 0.85rem; color: var(--text-muted); font-weight: 300; }
+.service-desc { font-size: 0.83rem; color: var(--text-mid); line-height: 1.8; flex: 1; margin-bottom: 1.8rem; }
+.service-includes { list-style: none; margin-bottom: 2rem; }
+.service-includes li {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  padding: 0.4rem 0;
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.6;
+}
+.service-includes li::before {
+  content: '—';
+  color: var(--teal);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+}
+.service-btn {
+  display: block;
+  text-align: center;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  margin-top: auto;
+}
+.service-btn-primary {
+  background: var(--teal);
+  color: #fff;
+  border: none;
+}
+.service-btn-primary:hover { background: #0f6e56; transform: translateY(-1px); }
+.service-btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 0.5px solid var(--navy);
+}
+.service-btn-outline:hover { background: var(--navy); color: #fff; transform: translateY(-1px); }
+
+.form-section { padding: 7rem 8vw; background: #fff; }
+.form-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: start;
+}
+.form-left .section-title { margin-bottom: 1.2rem; }
+.form-left p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 0.6rem; }
+.form-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 1.5rem; line-height: 1.7; }
+
+.form-card {
+  background: var(--off-white);
+  padding: 2.5rem;
+  border: 0.5px solid var(--border);
+}
+.form-card label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  margin-top: 1.4rem;
+}
+.form-card label:first-of-type { margin-top: 0; }
+.form-card input[type="text"],
+.form-card input[type="email"] {
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-card input:focus { border-color: var(--teal); }
+
+.form-divider { height: 0.5px; background: var(--border); margin: 1.8rem 0; }
+
+.checkbox-group { margin-top: 1.4rem; }
+.checkbox-section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+.checkbox-item input[type="checkbox"] {
+  width: 16px; height: 16px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+.checkbox-item span { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; }
+
+.submit-btn {
+  width: 100%;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1.8rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.submit-btn:hover { background: #0f6e56; transform: translateY(-1px); }
+.privacy-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.8rem;
+  line-height: 1.6;
+}
+
+footer {
+  background: var(--navy);
+  padding: 3rem 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+}
+footer .logo { color: #fff; }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--teal); }
+.footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 5rem 6vw 4rem; }
+  .hero-right { padding: 4rem 6vw 5rem; }
+  .content-grid { grid-template-columns: 1fr; gap: 2px; }
+  .who-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .checklist-grid { grid-template-columns: 1fr; }
+  .form-inner { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  .footer-links { justify-content: center; }
+  .section, .for-who, .services-section, .checklist-section, .form-section { padding: 5rem 6vw; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">B<span>2</span>G</div>
+  <a href="#form" class="nav-link">免費領取求職指南</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">B2G Career Consulting · 免費資源</p>
+    <h1 class="hero-title">
+      新鮮人求職，<br>
+      不是照抄別人的時間線，<br>
+      是<em>看懂你自己的</em>。
+    </h1>
+    <p class="hero-desc">
+      台灣新鮮人和留學生的求職時間線不一樣，海投和精準投遞的節奏也不一樣。這份指南把時間線、履歷、面試、英文面試四件事講清楚，讓你知道現在該做什麼，而不是慌著什麼都做。
+    </p>
+    <a href="#form" class="hero-cta">免費領取新鮮人求職指南</a>
+  </div>
+  <div class="hero-right">
+    <p class="hero-stat-label">指南包含</p>
+    <div class="stat-list">
+      <div class="stat-item">
+        <div class="stat-num">2<span>條線</span></div>
+        <div class="stat-text">
+          <strong>海內外求職時間線對照</strong>
+          台灣新鮮人時程 vs. 海外／留學生時程，各階段該做的事分開列清楚
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4<span>章</span></div>
+        <div class="stat-text">
+          <strong>時間線 → 履歷 → 面試 → 英文面試</strong>
+          按順序走完，不是東拼西湊的技巧清單
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1<span>份</span></div>
+        <div class="stat-text">
+          <strong>英文面試準備補充（B2G 獨家）</strong>
+          中文腦轉英文面試最常卡住的地方，和具體練習方法
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BRIEF INTRO -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2 class="section-title">這份指南在講什麼</h2>
+  </div>
+  <div class="checklist-grid" style="margin-top: 2rem;">
+    <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 2; max-width: 480px;">
+      台灣新鮮人和留學生的求職節奏不一樣，履歷邏輯、面試準備、英文面試又是完全不同的三件事。這份指南把它們拆開講清楚——你現在該做什麼、接下來該做什麼，而不是一份通用的待辦清單。
+    </p>
+    <div class="aside-box">
+      <span class="aside-tag">B2G 的立場</span>
+      <div class="aside-title">時間線不是拿來抄的，是拿來對照的。</div>
+      <p class="aside-desc">每個人的起點不一樣，這份指南給你一個可以對照的架構，讓你知道自己現在落在哪個階段。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2 class="section-title">需要更多協助？</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-tag">最受歡迎</span>
+      <div class="service-name">CV Revision + 書面診斷回饋</div>
+      <div class="service-price">£50 <span>/ 份</span></div>
+      <p class="service-desc">半小時面談了解你的背景和目標職位，接著幫你把每條 bullet 改成可以投出去的版本，並附上完整書面說明每個改動的原因。</p>
+      <ul class="service-includes">
+        <li>半小時一對一面談</li>
+        <li>履歷全文改寫（每條 bullet）</li>
+        <li>書面診斷回饋報告</li>
+        <li>一次免費修改</li>
+      </ul>
+      <a href="https://ko-fi.com/H1T620L9Z1/shop" target="_blank" class="service-btn service-btn-primary">立即預約 →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-tag">按小時</span>
+      <div class="service-name">CV 改寫諮詢</div>
+      <div class="service-price">£30 <span>/ 小時</span></div>
+      <p class="service-desc">一對一視訊，針對你的 CV 做即時的診斷和改寫討論。適合已經有基礎版本、想在特定地方得到即時回饋的人。</p>
+      <ul class="service-includes">
+        <li>一小時一對一視訊</li>
+        <li>即時診斷和改寫討論</li>
+        <li>重點區塊的具體建議</li>
+      </ul>
+      <a href="https://calendly.com/b2g-career-2026/resume-consultancy-v2" target="_blank" class="service-btn service-btn-outline">私訊了解 →</a>
+    </div>
+    <div class="service-card">
+      <span class="service-tag">按小時</span>
+      <div class="service-name">英文面試準備</div>
+      <div class="service-price">£30 <span>/ 小時</span></div>
+      <p class="service-desc">針對你即將面試的職位，做模擬問答和回答框架的調整。包含常見面試問題拆解，以及如何用英文說清楚你的故事。</p>
+      <ul class="service-includes">
+        <li>一小時一對一視訊</li>
+        <li>針對目標職位的模擬問答</li>
+        <li>英文表達和結構的即時調整</li>
+      </ul>
+      <a href="https://calendly.com/b2g-career-2026/resume-consultancy-v2" target="_blank" class="service-btn service-btn-outline">私訊了解 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="form">
+  <div class="form-inner">
+    <div class="form-left">
+      <div class="section-header" style="margin-bottom: 1.5rem;">
+        <div class="section-num" style="color: var(--teal-light);">03</div>
+        <h2 class="section-title">免費領取新鮮人求職指南</h2>
+      </div>
+      <p>填寫以下資料，指南的 PDF 下載連結會在送出後直接顯示給你。</p>
+      <p>如果你勾選同意，B2G 會不定期分享職涯相關內容——沒有廣告，都是真正有用的東西。</p>
+      <p class="form-note">你的資料只用於 B2G 的職涯諮詢服務溝通，不會轉給第三方。你可以隨時回信取消訂閱。</p>
+    </div>
+
+    <div class="form-card">
+      <label for="name">姓名</label>
+      <input type="text" id="name" placeholder="你的名字">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="your@email.com">
+
+      <div class="form-divider"></div>
+
+      <div class="checkbox-group">
+        <span class="checkbox-section-label">你願意</span>
+        <div class="checkbox-item">
+          <input type="checkbox" id="consent-newsletter">
+          <span>訂閱 B2G 電子報，不定期收到職涯內容（求職策略、CV 技巧、跨文化市場觀察）</span>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="consent-reach">
+          <span>讓 B2G 在適當時機與我聯繫，了解是否需要更多求職協助</span>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="handleSubmit()">送出，領取新鮮人求職指南</button>
+      <p class="privacy-note" id="privacy-note">送出即代表你同意以上勾選的項目。隨時可以回信取消。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">B<span>2</span>G Career Consulting</div>
+  <ul class="footer-links">
+    <li><a href="https://threads.net/@b2g.2026" target="_blank">Threads</a></li>
+    <li><a href="https://bridge2global.substack.com" target="_blank">Newsletter</a></li>
+    <li><a href="https://calendly.com/b2g-career-2026/resume-consultancy-v2" target="_blank">預約諮詢</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 B2G Career Consulting</p>
+</footer>
+
+<script>
+// 沿用材料包頁面同一組 Apps Script Web App URL，共用同一張 Google Sheet
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgU95cwgNKg-uCqqldtCp4qLsxcbLBpK_9qOrrkqjV198tfDILdWz4xtTKe52epBBUcw/exec';
+// 新鮮人求職指南 PDF 的 Google Drive 下載連結
+const GUIDE_URL  = 'https://drive.google.com/file/d/1nrkYFm_36NxiVdgXYB8WiEf-9WFhgalk/view?usp=sharing';
+
+async function handleSubmit() {
+  const name  = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const consentNewsletter = document.getElementById('consent-newsletter').checked;
+  const consentReach      = document.getElementById('consent-reach').checked;
+
+  if (!name || !email) { alert('請填寫姓名和 Email。'); return; }
+  const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailReg.test(email)) { alert('請填寫有效的 Email 地址。'); return; }
+
+  const btn = document.querySelector('.submit-btn');
+  btn.textContent = '送出中...';
+  btn.disabled = true;
+
+  const payload = {
+    name,
+    email,
+    consent_newsletter: consentNewsletter ? '是' : '否',
+    consent_reach:      consentReach      ? '是' : '否',
+    resource: '新鮮人求職指南',
+    timestamp: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch (e) {}
+
+  btn.textContent = '✓ 已送出';
+  btn.style.background = '#0f6e56';
+
+  document.getElementById('privacy-note').innerHTML =
+    '<strong style="color:var(--teal);font-size:0.9rem;">' +
+    '指南下載：<a href="' + GUIDE_URL + '" target="_blank" style="color:var(--teal);">點此下載 PDF 指南 →</a>' +
+    '</strong><br>' +
+    '<span style="font-size:0.75rem;color:var(--text-muted);">如有問題，歡迎寄信至 b2g.career.2026@gmail.com</span>';
+}
+</script>
+
+</body>
+</html>
